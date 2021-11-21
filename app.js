@@ -4,9 +4,7 @@ app.set("view engine", "ejs")
 app.use(express.static('public'))
 var fs = require('fs')
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Vaishnavi:V@ishu2511@cluster0.vvjo6.mongodb.net/<dbname>?retryWrites=true&w=majority', { useNewUrlParser: true,
-useCreateIndex: true,
-useUnifiedTopology: true}););
+mongoose.connect('mongodb://localhost:27017/newdb', { useNewUrlParser: true });
 var session = require('express-session')
 var _ = require("lodash")
 const Schema = mongoose.Schema;
