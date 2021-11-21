@@ -1,0 +1,38 @@
+<h1>Post a blog</h1>
+ 
+<form method="post" enctype="multipart/form-data">
+    <input name="heading" placeholder="Name" required />HEADING 
+    <br /><br />
+    <textarea style ="height:400px;width:300px"name="content" placeholder="content" required >CONTENT</textarea>
+     <input type = "file" name ="file" /> Photo upload
+    <button style = "background-color: rgb(73, 73, 143)">
+        Submit
+    </button>
+</form>
+<button type ="submit" onclick="location.href= 'http://localhost:3000/edit'">Edit</button>
+<button type ="submit" onclick="location.href= 'http://localhost:3000/delete'">Delete</button>
+<button type ="submit" onclick="location.href= 'http://localhost:3000/'">Logout</button>
+
+<h1>Your Blogs</h1>
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <% for(var i = 0; i < blogs.length; i++) { %>
+    <tr>
+        
+        <td><%=i+1 %></td>
+        <td><%=blogs[i].heading %>
+        </br>
+        
+    </br>
+        <%=blogs[i].content %>
+    </td>
+    <img src = "/uploads/<%=blogs[i].image %>"style = "height:100px;width:100px">
+        
+        
+    </tr>
+    <% } %>
+</table>
